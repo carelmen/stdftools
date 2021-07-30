@@ -1,5 +1,6 @@
 # stdftools
-(Conan)[https://conan.io/] package for the excellent [FreeSTDF](https://freestdf.sourceforge.io/).
+[Conan](https://conan.io/) package for the excellent [FreeSTDF](https://freestdf.sourceforge.io/).
+Hopefully this is useful for somebody :) 
 
 ## Conan
 1. Create conan package for freestdf
