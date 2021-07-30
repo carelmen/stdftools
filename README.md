@@ -1,5 +1,5 @@
 # stdftools
-Some tools for STDF files
+(Conan)[https://conan.io/] package for the excellent [FreeSTDF](https://freestdf.sourceforge.io/).
 
 ## Conan
 1. Create conan package for freestdf
@@ -7,7 +7,6 @@ Some tools for STDF files
 cd conan/freestdf
 conan create . 
 ```
-
 
 2. Change to your build directory
 ```
@@ -20,5 +19,9 @@ If conan install .. fails because of missing gtest, try using
 ```
 conan install .. --build=gtest
 ```
+
+You don't need gtest, just added it to test out conan.
+There are probably a few things to clean up - compile works Debian (and Raspberry Pi) but failed on FreeBSD 
+due to the bzip/gzip library dependencies. To be fixed.
 
 
