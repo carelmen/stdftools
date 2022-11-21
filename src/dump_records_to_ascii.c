@@ -159,12 +159,19 @@ for (i=1; i<argc; ++i) {
 			case REC_MIR: {
 				rec_mir *mir = (rec_mir*)rec;
 
-                int8_t *field_len = (int8_t *)mir->LOT_ID;
-				//printf("field sblot %d\n", *field_len);
+//				print_tim("START_T", mir->START_T);
 
-     		//	 snprintf(lotinfo, *field_len, "%s\n", (mir->LOT_ID)+1);
-                 s = mir->SBLOT_ID;
-     			 sprintf(lotinfo, "%s ", (*(s) ? (s)+1 : "(null)"));
+				// snprintf(lotinfo, *field_len, "%s\n", (mir->LOT_ID)+1);
+                time_t t = mir->SETUP_T;
+                sprintf(lotinfo,  "%s", ctime(&t));
+
+                struct tm * timeinfo;
+                timeinfo = localtime (&t);
+
+                strftime(lotinfo, 26, "%Y-%m-%d %H:%M:%S", timeinfo);
+
+                s = mir->SBLOT_ID;
+                sprintf(lotinfo, "%s %s ", lotinfo, (*(s) ? (s)+1 : "(null)"));
                 s = mir->LOT_ID;
                 sprintf(lotinfo, "%s %s ", lotinfo, (*(s) ? (s)+1 : "(null)"));
                 s = mir->NODE_NAM;
@@ -218,7 +225,7 @@ for (i=1; i<argc; ++i) {
 				rec_prr *prr = (rec_prr*)rec;
                 // Get the bins and part id information
                  printf("%s %d %d %d %d %d %d %s\n",  lotinfo, prr->SITE_NUM, prr->PART_FLG, prr->HARD_BIN, prr->SOFT_BIN, prr->X_COORD, prr->Y_COORD, prr->PART_ID);
-//                exit(0);
+                exit(0);
 //				print_int("HEAD_NUM", prr->HEAD_NUM);
 //				print_int("SITE_NUM", prr->SITE_NUM);
 //				print_hex("PART_FLG", prr->PART_FLG);
