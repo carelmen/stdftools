@@ -15,6 +15,8 @@ target_link_libraries(runtests  gtest gmock pthread )
 add_executable( dump_records_to_ascii dump_records_to_ascii.c)
 target_link_libraries( dump_records_to_ascii stdf)
 
+add_executable( stdf2xtdf stdf2xtdf.c)
+target_link_libraries( stdf2xtdf stdf)
 
 # target_include_directories(example PUBLIC /usr/include)
 # target_link_libraries(example -static stdf z bz2)
