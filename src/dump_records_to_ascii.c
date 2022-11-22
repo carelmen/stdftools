@@ -142,7 +142,7 @@ int main(int argc, char *argv[])
 	}
 
 for (i=1; i<argc; ++i) {
-	printf("Dumping %s\n", argv[i]);
+	// printf("Dumping %s\n", argv[i]);
 	f = stdf_open(argv[i]);
 	if (!f) {
 		perror("Could not open file");
@@ -224,8 +224,8 @@ for (i=1; i<argc; ++i) {
 			case REC_PRR: {
 				rec_prr *prr = (rec_prr*)rec;
                 // Get the bins and part id information
-                 printf("%s %d %d %d %d %d %d %s\n",  lotinfo, prr->SITE_NUM, prr->PART_FLG, prr->HARD_BIN, prr->SOFT_BIN, prr->X_COORD, prr->Y_COORD, prr->PART_ID);
-                exit(0);
+           //      printf("%s %d %d %d %d %d %d %s\n",  lotinfo, prr->SITE_NUM, prr->PART_FLG, prr->HARD_BIN, prr->SOFT_BIN, prr->X_COORD, prr->Y_COORD, prr->PART_ID);
+                printf("%s %d %d %d %d\n",  lotinfo, prr->SITE_NUM, prr->PART_FLG, prr->HARD_BIN, prr->SOFT_BIN) ; // ', prr->PART_ID);
 //				print_int("HEAD_NUM", prr->HEAD_NUM);
 //				print_int("SITE_NUM", prr->SITE_NUM);
 //				print_hex("PART_FLG", prr->PART_FLG);
